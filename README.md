@@ -1,4 +1,4 @@
-# pizzas
+# pizzaapp-2
 
 ## Project setup
 ```

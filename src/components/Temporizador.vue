@@ -62,7 +62,7 @@ export default {
     
  
     mounted()
-    {   var min = parseInt(this.time);
+    {   var min = parseInt(this.tiempo);
         var vm=this
           vm.countDowndate.setTime(min+1800000)
           var now = new Date().getTime();
@@ -72,24 +72,10 @@ export default {
            {
              vm.value=100
            }
-           if(this.status==="Serving(Finished)")
-           {
-             vm.value=100
-            vm.seg=0
-            vm.mins=0
-               if(vm.mins < 10)
-        {
-              vm.minutos="0"+vm.mins
-        }
-           if(vm.seg < 10)
-        {
-          vm.segundos="0"+vm.seg
-        }
-           }
-          else{
+         
       var x = setInterval(function()
       { 
-           if(this.status==="Serving(Finished)")
+           if(vm.status==="Serving(Finished)")
            {
              vm.value=100
             vm.seg=0
@@ -135,7 +121,7 @@ export default {
     
     }   
     }
-}
+
 </script>
 <style lang="stylus" scoped>
   .v-progress-circular

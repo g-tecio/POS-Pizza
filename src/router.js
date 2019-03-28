@@ -1,25 +1,65 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-
+import Welcome from './views/Welcome.vue'
+import Checkout from './views/Caja.vue'
+import Cocina from './views/Cocina.vue'
+import End from './views/Final.vue'
+import state from './views/Estatus.vue'
+import Temporizador from './components/Temporizador.vue'
+import Status from './views/Status.vue'
 Vue.use(Router)
-
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'welcome',
+      component: Welcome
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/About.vue')
+    },
+    {
+      path: '/home/:name',
+      name: 'home',
+      component: Home,
+      props:true
+
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: Checkout
+    },
+    {
+      path: '/Tempo',
+      name: 'Tempo',
+      component: Temporizador
+    },
+    {
+      path: '/End',
+      name: 'End',
+      component: End
+    },
+    {
+      path: '/Cocina',
+      name: 'Cocina',
+      component: Cocina
+    }, 
+     {
+      path: '/Status',
+      name: 'Status',
+      component: Status
+    },
+    {
+      path: '/State/:code',
+      name: 'Estatus',
+      component: state,
+      props:true
     }
   ]
 })
